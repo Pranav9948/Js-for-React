@@ -22,12 +22,36 @@ if(true){
 console.log("1",rcb)
 
 
-function food(){
 
-    var morning='toasted bread'
+
+
+
+const status='raining'
+let isMatchToday;
+
+if(status==="raining"){
+
+    isMatchToday="yes"
 }
-console.log('2',morning)
 
-food()
+else{
 
-console.log('3',morning)
+    
+    isMatchToday="No"
+}
+
+console.log("3",isMatchToday)
+
+
+let climate='sun'
+let matchStatus
+
+climate==='sun' ?  console.log(" we  have a match today") :  console.log("  no we  have a match today") 
+
+
+
+const team1Score='280',
+team2Score="134"
+
+team1Score > team2Score ?  console.log('team 1 wins') : console.log('team 2 wins')
+
