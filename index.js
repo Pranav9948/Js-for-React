@@ -193,78 +193,277 @@
 // callback functions Advanced
 
 
-const DecisionResult=[]
+// const DecisionResult=[]
 
-const [dec1,dec2]= DecisionResult
-
-
+// const [dec1,dec2]= DecisionResult
 
 
-function thirdUmpireDecision(groundUmpireDecisions,checkingCamera1,checkingCamera2){
 
-    if(!groundUmpireDecisions) return ''
+
+// function thirdUmpireDecision(groundUmpireDecisions,checkingCamera1,checkingCamera2){
+
+//     if(!groundUmpireDecisions) return ''
   
 
-        checkingCamera1()
+//         checkingCamera1()
 
-        checkingCamera2()
-
-
-}
+//         checkingCamera2()
 
 
-thirdUmpireDecision(true,checkingCamera1,checkingCamera2)
+// }
+
+
+// thirdUmpireDecision(true,checkingCamera1,checkingCamera2)
 
 
 
-function checkingCamera1(){
-  checkingCamera3()
-}
+// function checkingCamera1(){
+//   checkingCamera3()
+// }
 
 
-function checkingCamera2(){
+// function checkingCamera2(){
 
-    checkingCamera3()
-}
+//     checkingCamera3()
+// }
 
 
-function checkingCamera3(){
+// function checkingCamera3(){
 
-    let decision=prompt('what is ur decision')
-  let result= decision==='out' ? 'true': 'false'
+//     let decision=prompt('what is ur decision')
+//   let result= decision==='out' ? 'true': 'false'
   
-     console.log('43',result)
-     DecisionResult.push(result)
-     console.log('23',DecisionResult)
-}
+//      console.log('43',result)
+//      DecisionResult.push(result)
+//      console.log('23',DecisionResult)
+// }
 
-if( DecisionResult.length <1){
+// if( DecisionResult.length <1){
 
    
     
-    const [result1]=DecisionResult
+//     const [result1]=DecisionResult
 
     
-    result1   ? DisplayOnScreen("Decision : Out") : ''
+//     result1   ? DisplayOnScreen("Decision : Out") : ''
     
     
+
+// }
+
+// const [result1,result2]=DecisionResult
+
+    
+//     result1 && result2  ? DisplayOnScreen("Decision : Out") : ''
+
+    
+
+
+
+
+
+// function DisplayOnScreen(c){
+
+
+//     const value=document.getElementById('pageContent')
+//     value.innerText=c
+// }
+
+
+
+// ArrowFunctions
+
+
+// function helloWorld(){
+
+//     console.log(this)
+// }
+
+//  let World=function(){
+
+//     console.log(this)
+// }
+
+// const  hello=()=>{
+
+//     console.log(this)
+
+// }
+
+
+// helloWorld()
+// World()
+// hello()
+
+
+//  let showAMessage=()=>{
+
+//     console.log("okw",this)
+// }
+
+
+// let titleChange=document.getElementById('decision')
+
+
+// titleChange.addEventListener('click',showAMessage)
+
+
+
+//objects
+
+
+// const channel={
+
+//     name:'webDiary',
+//     age:'3yrs',
+
+//    teaches :  function(){
+
+//     console.log(this.age)
+//    }
+// }
+
+// channel.teaches()
+
+
+// //fnl objects
+
+
+// // function player(playerName,score,centuries){
+
+// //     return {
+
+// //         playerName,
+// //         score,
+// //         centuries
+
+// //     }
+   
+// // }
+
+// //  var d=player("dhoni",234,10)
+
+// //  console.log("nbm",d)
+
+
+// // objects video 14
+
+
+
+// const cricketPlayer={
+
+//     name:'sachin',
+//     age:34,
+//     place:'mumbai',
+//     skills:["batting","bowling","fielding"],
+
+//     specialShots:function(){
+
+//      console.log(`plays straight drive well`)
+
+//     }
+// }
+
+// Object.freeze(cricketPlayer)
+
+//  const bestPlayer=Object.assign(cricketPlayer)
+
+//  bestPlayer.age=45
+
+//  console.log(cricketPlayer)
+//  console.log(bestPlayer)
+
+
+//  //spread operator
+
+
+//  const cricplayer1={
+//     name:"dhoni",
+//     age:41
+//  }
+
+
+//  cricplayer1.foods={
+
+//     morning:"dosa",
+//     noon:"biriyani"
+//  }
+
+//  console.log("212",cricplayer1);
+
+
+//Array Operations
+
+
+//splice
+
+// const CricketPlayersList=["dhoni","sachin","virat","sechwag"]
+
+//  const news =CricketPlayersList.splice(1,3)
+
+
+// console.log("xc",CricketPlayersList)
+
+// console.log("c",news)
+
+// //slice
+
+// const arraz=["hayden","ponting","gilchrist","gibbs","symonds"]
+
+//  const sliced=arraz.slice(2,3)
+
+// console.log(sliced)
+
+// const CricketPlayersList=["dhoni","sachin","virat","sechwag"]
+
+// const footBallPlayersList=["messi","ronaldo","pele"]
+
+
+// const sportsPlayers=[...CricketPlayersList,...footBallPlayersList]
+
+// console.log("219",sportsPlayers)
+
+
+// callBack Hell
+
+
+function RequestDecisionReviewSystem(cbfn){
+
+    console.log(`1 Third umpire recieved request from ground Umpire`)
+
+    console.log(`2  3rd umpire requesting for cameras angle`)
+
+
+    cbfn('OUTTTT...')
+
+
+
 
 }
 
-const [result1,result2]=DecisionResult
 
-    
-    result1 && result2  ? DisplayOnScreen("Decision : Out") : ''
+RequestDecisionReviewSystem(checkingCameras)
 
-    
+let resultOf;
+
+function checkingCameras(y){
+
+    setTimeout(()=>{
+
+        console.log(`the result from camera 1 is ${y}`)
+        resultOf=y
+         showingResultOnScreen()
+
+         
+
+    },5000)
 
 
+}
 
-
-
-function DisplayOnScreen(c){
-
+function  showingResultOnScreen(){
 
     const value=document.getElementById('pageContent')
-    value.innerText=c
+
+     value.innerText=resultOf
 }
