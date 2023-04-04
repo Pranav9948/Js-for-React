@@ -427,43 +427,100 @@
 // callBack Hell
 
 
-function RequestDecisionReviewSystem(cbfn){
+// function RequestDecisionReviewSystem(cbfn){
+
+//     console.log(`1 Third umpire recieved request from ground Umpire`)
+
+//     console.log(`2  3rd umpire requesting for cameras angle`)
+
+
+//     cbfn('OUTTTT...')
+
+
+
+
+// }
+
+
+// RequestDecisionReviewSystem(checkingCameras)
+
+// let resultOf;
+
+// function checkingCameras(y){
+
+//     setTimeout(()=>{
+
+//         console.log(`the result from camera 1 is ${y}`)
+//         resultOf=y
+//          showingResultOnScreen()
+
+         
+
+//     },5000)
+
+
+// }
+
+// function  showingResultOnScreen(){
+
+//     const value=document.getElementById('pageContent')
+
+//      value.innerText=resultOf
+// }
+
+
+
+///promise
+
+let thirdUmpireDecision;
+
+
+let value=document.getElementById('pageContent')
+
+
+function RequestDecisionReviewSystem(){
 
     console.log(`1 Third umpire recieved request from ground Umpire`)
 
     console.log(`2  3rd umpire requesting for cameras angle`)
 
 
-    cbfn('OUTTTT...')
+    return new Promise((resolve,reject)=>{
 
 
+        setTimeout(()=>{
+
+            
+
+            resolve(thirdUmpireDecision==='notOut')
+      
+            console.log(`3rd umpire decision ${thirdUmpireDecision}`)
+      
+          },2000)   
+
+    })
+
+
+}
+
+function printUmpireDecision(x){
+
+
+    return new Promise((resolve,reject)=>{
+
+
+        
+            resolve(
+
+                value.innerText=x
+            )
+      
+
+    })
 
 
 }
 
 
-RequestDecisionReviewSystem(checkingCameras)
+RequestDecisionReviewSystem().then((x)=>{console.log("kk",x)})
 
-let resultOf;
-
-function checkingCameras(y){
-
-    setTimeout(()=>{
-
-        console.log(`the result from camera 1 is ${y}`)
-        resultOf=y
-         showingResultOnScreen()
-
-         
-
-    },5000)
-
-
-}
-
-function  showingResultOnScreen(){
-
-    const value=document.getElementById('pageContent')
-
-     value.innerText=resultOf
-}
